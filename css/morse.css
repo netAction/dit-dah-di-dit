@@ -1,0 +1,17 @@
+/* all other CSS files are from Bootstrap */
+
+body {
+  padding-top: 50px;
+}
+
+/* Custom page footer */
+.footer {
+	margin-top:2em;
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container pre {
+	letter-spacing: 0.2em;
+}
