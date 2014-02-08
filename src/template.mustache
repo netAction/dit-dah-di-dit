@@ -107,18 +107,18 @@
 				{{{plainHtml}}}
 			{{/exercises}}
 
+			{{#pagination}}
+			<ul class="pagination">
+				{{#pages}}
+				<li{{#active}} class="active"{{/active}}><a href="{{href}}">{{number}}</a></li>
+				{{/pages}}
+			</ul>
+			{{/pagination}}
+
 			<div class="footer">
 						<p><a href="http://netaction.github.io/dit-dah-di-dit/">dit-dah-di-dit</a> by <a href="https://www.netaction.de">netAction</a></p>
 			</div>
 		</div></div><!-- grid row -->
-		{{#pagination}}
-		<ul class="pagination">
-			{{#pages}}
-			<li{{#active}} class="active"{{/active}}><a href="{{href}}">{{number}}</a></li>
-			{{/pages}}
-		</ul>
-		{{/pagination}}
-
 	</div><!-- /.container -->
 	<!-- Bootstrap core JavaScript
 	================================================== -->
