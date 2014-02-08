@@ -26,8 +26,9 @@ for (var lang in languages) { // iterate languages
 			var templateData = generateTemplateData();
 			var html = template.render(templateData);
 
-			// TODO: Strip white spaces and dots, convert to lower case
-			fs.writeFileSync(__dirname+'/../'+lang+'/'+content[section].pages[page].name+'.html',html);
+			fs.writeFileSync(__dirname+'/../'+lang+'/'+
+				convertFilename(content[section].pages[page].name)+
+				'.html',html);
 		}
 	}
 
@@ -50,7 +51,7 @@ function generateTemplateData() {
 	for (var sectionName in content) templateData.sections.push({
 		active: (sectionName==section),
 		name: content[sectionName].name,
-		href: content[sectionName].pages[0].name+'.html'
+		href: convertFilename(content[sectionName].pages[0].name)+'.html'
 	});
 	// Section with more than one page need pagination
 	if (content[section].pages.length > 1) {
@@ -80,7 +81,7 @@ function generateTemplateData() {
 		for (pageNumber in pageNumbers) {
 			templateData.pagination.pages.push({
 				number: pageNumbers[pageNumber],
-				href: content[section].pages[pageNumbers[pageNumber]-1].name+'.html',
+				href: convertFilename(content[section].pages[pageNumbers[pageNumber]-1].name)+'.html',
 				active: (pageNumbers[pageNumber]-1 == page)
 			});
 		}
@@ -104,9 +105,24 @@ function generateIndexPage() {
 	for (var sectionName in content) templateData.sections.push({
 		active: false,
 		name: content[sectionName].name,
-		href: content[sectionName].pages[0].name+'.html'
+		href: convertFilename(content[sectionName].pages[0].name)+'.html'
 	});
 
 	var html = template.render(templateData);
 	fs.writeFileSync(__dirname+'/../'+lang+'/index.html',html);
+}
+
+function convertFilename(name) {
+	// converts a given name to an nice file name
+	name = name
+		.toLowerCase()
+		.replace(/ /g,"_") // space to underscore
+		.replace(/[áàâä]/g, 'a')
+		.replace(/[úùûü]/g, 'u')
+		.replace(/[ö]/g, 'o')
+		.replace(/[éèê]/g, 'e')
+		.replace(/[ç]/g, 'c')
+		.replace(/[ß]/g, 'ss')
+		.replace(/[^\w]/gi, '') // remove non alphanumeric and non underscore
+	return name;
 }
