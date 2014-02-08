@@ -201,7 +201,7 @@ content : [{
 	pages: [{
 		name: 'Über dit-dah-di-dit',
 		exercises: [
-			{plainHtml:'<p>Der Kurs ist <a href="https://github.com/netAction/dit-dah-di-dit">Freie Software</a> von <a href="https://www.netaction.de">DD1TS Thomas Schmidt</a>.</p>Wenn du Ideen hast, die Texte verbessern möchtest oder einfach nur deine Erfahrungen mit dit-dah-di-dit beschreibst, würde das sehr helfen. <em>schmidt KRINGEL netaction.de</em><p>'}
+			{plainHtml:'<p>Der Kurs ist <a href="https://github.com/netAction/dit-dah-di-dit">Freie Software</a> von <a href="https://www.netaction.de">DD1TS Thomas Schmidt</a> (<a href="https://github.com/netAction/dit-dah-di-dit">Quellen</a>).</p>Wenn du Ideen hast, die Texte verbessern möchtest oder einfach nur deine Erfahrungen mit dit-dah-di-dit beschreibst, würde das sehr helfen. <em>schmidt KRINGEL netaction.de</em><p>'}
 		]
 	}]
 }
