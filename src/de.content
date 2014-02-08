@@ -9,7 +9,7 @@ content : [{
 	name: 'Kurs',
 	pages: [{
 		name: 'Lektion 1',
-		introText: '<p>In dieser Lektion werden die Zeichen <em>K</em>, <em>R</em>, <em>M</em> und <em>S</em> geübt.</p>',
+		introText: '<p>In der ersten Lektion werden die Zeichen <em>K</em>, <em>R</em>, <em>M</em> und <em>S</em> geübt.</p>',
 		exercises: [
 			{newCharacters:[{characters:[{character:'K'},{character:'R'},{character:'M'},{character:'S'}]}]},
 			{plainHtml:'<h2>Anleitung</h2><p>Die folgenden Wörter aus Zufallszeichen solltest du mit Kugelschreiber auf einen Zettel schreiben und anschließend vergleichen. Wenn du ein Zeichen nicht sofort erkennst, malst du schnell einen Punkt. Verpasse nicht das nächste Zeichen, weil du überlegst.'},

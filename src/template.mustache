@@ -52,6 +52,65 @@
 	</div>
 
 	<div class="container">
+		<div class="row"><div class="col-sm-10 col-md-8 col-lg-7">
+			{{#exercises}}
+				{{#newCharacters}}
+					<h2>{{#i18n}}newCharactersTitle{{/i18n}}</h2>
+					<p>{{#i18n}}newCharactersInstruction{{/i18n}}</p>
+					<p>
+						{{#characters}}
+							<button type="button" data-morse-play="{{character}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{character}}</button>
+						{{/characters}}
+					</p>
+				{{/newCharacters}}
+
+				{{#randomGroups}}
+					<h2>{{#i18n}}randomGroupsTitle{{/i18n}}</h2>
+					<p>{{#i18n}}randomGroupsInstruction{{/i18n}}</p>
+					<p>
+						<button type="button" data-morse-random="{{characters}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">Abspielen</button>
+						<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">Stop</button>
+					</p>
+					<pre></pre>
+				{{/randomGroups}}
+
+				{{#visibleMessages}}
+					<h2>{{#i18n}}visibleMessagesTitle{{/i18n}}</h2>
+					<p>{{#i18n}}visibleMessagesInstruction{{/i18n}}</p>
+					<p>
+						<select class="form-control" style="width:auto; display:inline-block;">
+							{{#messages}}
+								<option value="{{message}}">{{description}}</option>
+							{{/messages}}
+						</select>
+						<button type="button" data-morse-visibleMessage="true" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{#i18n}}playButton{{/i18n}}</button>
+						<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">{{#i18n}}stopButton{{/i18n}}</button>
+					</p>
+					<pre></pre>
+				{{/visibleMessages}}
+
+				{{#invisibleMessages}}
+					<h2>{{#i18n}}invisibleMessagesTitle{{/i18n}}</h2>
+					<p>{{#i18n}}invisibleMessagesInstruction{{/i18n}}</p>
+					<p>
+						<select class="form-control" style="width:auto; display:inline-block;">
+							{{#messages}}
+								<option value="{{message}}">{{description}}</option>
+							{{/messages}}
+						</select>
+						<button type="button" data-morse-invisibleMessage="true" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{#i18n}}playButton{{/i18n}}</button>
+						<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">{{#i18n}}stopButton{{/i18n}}</button>
+					</p>
+				{{/invisibleMessages}}
+
+
+				{{{plainHtml}}}
+			{{/exercises}}
+
+			<div class="footer">
+						<p><a href="http://netaction.github.io/dit-dah-di-dit/">dit-dah-di-dit</a> by <a href="https://www.netaction.de">netAction</a></p>
+			</div>
+		</div></div><!-- grid row -->
 		{{#pagination}}
 		<ul class="pagination">
 			{{#pages}}
@@ -60,65 +119,6 @@
 		</ul>
 		{{/pagination}}
 
-		<div class="row"><div class="col-sm-10 col-md-8 col-lg-7">
-		{{#exercises}}
-			{{#newCharacters}}
-				<h2>{{#i18n}}newCharactersTitle{{/i18n}}</h2>
-				<p>{{#i18n}}newCharactersInstruction{{/i18n}}</p>
-				<p>
-					{{#characters}}
-						<button type="button" data-morse-play="{{character}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{character}}</button>
-					{{/characters}}
-				</p>
-			{{/newCharacters}}
-
-			{{#randomGroups}}
-				<h2>{{#i18n}}randomGroupsTitle{{/i18n}}</h2>
-				<p>{{#i18n}}randomGroupsInstruction{{/i18n}}</p>
-				<p>
-					<button type="button" data-morse-random="{{characters}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">Abspielen</button>
-					<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">Stop</button>
-				</p>
-				<pre></pre>
-			{{/randomGroups}}
-
-			{{#visibleMessages}}
-				<h2>{{#i18n}}visibleMessagesTitle{{/i18n}}</h2>
-				<p>{{#i18n}}visibleMessagesInstruction{{/i18n}}</p>
-				<p>
-					<select class="form-control" style="width:auto; display:inline-block;">
-						{{#messages}}
-							<option value="{{message}}">{{description}}</option>
-						{{/messages}}
-					</select>
-					<button type="button" data-morse-visibleMessage="true" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{#i18n}}playButton{{/i18n}}</button>
-					<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">{{#i18n}}stopButton{{/i18n}}</button>
-				</p>
-				<pre></pre>
-			{{/visibleMessages}}
-
-			{{#invisibleMessages}}
-				<h2>{{#i18n}}invisibleMessagesTitle{{/i18n}}</h2>
-				<p>{{#i18n}}invisibleMessagesInstruction{{/i18n}}</p>
-				<p>
-					<select class="form-control" style="width:auto; display:inline-block;">
-						{{#messages}}
-							<option value="{{message}}">{{description}}</option>
-						{{/messages}}
-					</select>
-					<button type="button" data-morse-invisibleMessage="true" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{#i18n}}playButton{{/i18n}}</button>
-					<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">{{#i18n}}stopButton{{/i18n}}</button>
-				</p>
-			{{/invisibleMessages}}
-
-
-			{{{plainHtml}}}
-		{{/exercises}}
-
-		<div class="footer">
-					<p><a href="http://netaction.github.io/dit-dah-di-dit/">dit-dah-di-dit</a> by <a href="https://www.netaction.de">netAction</a></p>
-		</div>
-	</div></div><!-- grid row -->
 	</div><!-- /.container -->
 	<!-- Bootstrap core JavaScript
 	================================================== -->
