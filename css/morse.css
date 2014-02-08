@@ -6,10 +6,13 @@ body {
 
 /* Custom page footer */
 .footer {
-	margin-top:2em;
-  padding-top: 19px;
   color: #777;
+}
+
+.footerspacer {
   border-top: 1px solid #e5e5e5;
+	margin-top:40px;
+  padding-top: 10px;
 }
 
 .container pre {

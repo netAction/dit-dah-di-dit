@@ -85,6 +85,22 @@ function generateTemplateData() {
 				active: (pageNumbers[pageNumber]-1 == page)
 			});
 		}
+		// not first page
+		if (page*1 != 0) {
+			templateData.pagination.pages.unshift({
+				number: "&laquo;",
+				href: convertFilename(content[section].pages[page*1-1].name)+'.html',
+				active: false
+			});
+		}
+		// not last
+		if (page*1 != content[section].pages.length-1) {
+			templateData.pagination.pages.push({
+				number: "&raquo;",
+				href: convertFilename(content[section].pages[page*1+1].name)+'.html',
+				active: false
+			});
+		}
 	}
 
 	return templateData;

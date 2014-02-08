@@ -107,10 +107,12 @@
 				{{{plainHtml}}}
 			{{/exercises}}
 
+			<div class="footerspacer"></div>
+
 			{{#pagination}}
 			<ul class="pagination">
 				{{#pages}}
-				<li{{#active}} class="active"{{/active}}><a href="{{href}}">{{number}}</a></li>
+				<li{{#active}} class="active"{{/active}}><a href="{{href}}">{{{number}}}</a></li>
 				{{/pages}}
 			</ul>
 			{{/pagination}}
