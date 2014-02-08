@@ -1,0 +1,195 @@
+module.exports = {
+
+title: 'Morse Trainer',
+indexPage: {
+	html: '<h1>Hier ist der Trainer.</h1>',
+	introText: '<p>Yeah!</p>'
+},
+content : [{
+	name: 'Kurs',
+	pages: [{
+		name: 'Lektion 1',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>K</em>, <em>R</em>, <em>M</em> und <em>S</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'K'},{character:'R'},{character:'M'},{character:'S'}]}]},
+			{randomGroups:[{characters:"KRMS"}]},
+			{randomGroups:[{characters:"WTF"}]}
+		]
+	}, {
+		name: 'Lektion 2',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>U</em>, <em>A</em> und <em>P</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'U'},{character:'A'},{character:'P'}]}]},
+			{randomGroups:[{characters:"KRMSUUAAPP"}]}
+		]
+	}, {
+		name: 'Lektion 3',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>T</em>, <em>L</em> und <em>O</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'T'},{character:'L'},{character:'O'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOTLO"}]}
+		]
+	}, {
+		name: 'Lektion 4',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>W</em>, <em>I</em> und <em>der Punkt</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'W'},{character:'I'},{character:'.'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.WI."}]}
+		]
+	}, {
+		name: 'Lektion 5',
+		introText: '<p>In dieser Lektion gibt es keine neuen Zeichen. Dafür üben wir Klartext-Wörter und probieren höhere Geschwindigkeiten aus.</p>',
+		exercises: [
+			{randomGroups:[{characters:"KRMSUAPTLOWI."}]}
+		]
+	}, {
+		name: 'Lektion 6',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>N</em>, <em>J</em> und <em>E</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'N'},{character:'J'},{character:'E'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJENJE"}]}
+		]
+	}, {
+		name: 'Lektion 7',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>F</em>, <em>Y</em> und <em>die Null</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'0'},{character:'F'},{character:'Y'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0FY0"}]}
+		]
+	}, {
+		name: 'Lektion 8',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>V</em>, <em>G</em> und <em>das Komma</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:','},{character:'V'},{character:'G'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG,VG"}]}
+		]
+	}, {
+		name: 'Lektion 9',
+		introText: '<p>In dieser Lektion gibt es keine neuen Zeichen. Dafür üben wir Klartext-Wörter und probieren höhere Geschwindigkeiten aus.</p>',
+		exercises: [
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG"}]}
+		]
+	}, {
+		name: 'Lektion 10',
+		introText: '<p>In dieser Lektion werden <em>der Schrägstrich</em> und <em>die Fünf</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'5'},{character:'/'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/5/"}]}
+		]
+	}, {
+		name: 'Lektion 11',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>Q</em> und <em>die Neun</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'Q'},{character:'9'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9Q9"}]}
+		]
+	}, {
+		name: 'Lektion 12',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>Z</em> und <em>H</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'Z'},{character:'H'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZHZH"}]}
+		]
+	}, {
+		name: 'Lektion 13',
+		introText: '<p>In dieser Lektion gibt es keine neuen Zeichen. Dafür üben wir Klartext-Wörter und probieren höhere Geschwindigkeiten aus.</p>',
+		exercises: [
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH"}]}
+		]
+	}, {
+		name: 'Lektion 14',
+		introText: '<p>In dieser Lektion werden <em>die Drei</em> und <em>die Acht</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'3'},{character:'8'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH3838"}]}
+		]
+	}, {
+		name: 'Lektion 15',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>B</em> und <em>das Fragezeichen</em> geübt. In diesem Kurs gibt es übrigens kein Ausrufezeichen, weil das Zeichen zum Komma umfunktioniert wurde. Als Ersatz gibt es ein neues, inoffizielles Ausrufezeichen. Du kannst es unten anhören, geübt wird es aber nicht.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'B'},{character:'?'},{character:'!'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?B?"}]}
+		]
+	}, {
+		name: 'Lektion 16',
+		introText: '<p>In dieser Lektion gibt es keine neuen Zeichen. Dafür üben wir Klartext-Wörter und probieren höhere Geschwindigkeiten aus.</p>',
+		exercises: [
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?"}]}
+		]
+	}, {
+		name: 'Lektion 17',
+		introText: '<p>In dieser Lektion werden <em>die Vier</em> und <em>die Zwei</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'4'},{character:'2'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?424242"}]}
+		]
+	}, {
+		name: 'Lektion 18',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>C</em> und <em>die Sieben</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'7'},{character:'C'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C7C7C"}]}
+		]
+	}, {
+		name: 'Lektion 19',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>D</em> und <em>die Eins</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'1'},{character:'D'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D1D1D"}]}
+		]
+	}, {
+		name: 'Lektion 20',
+		introText: '<p>In dieser Lektion gibt es keine neuen Zeichen. Dafür üben wir Klartext-Wörter und probieren höhere Geschwindigkeiten aus.</p>',
+		exercises: [
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D"}]}
+		]
+	}, {
+		name: 'Lektion 21',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>X</em> und <em>die Sechs</em> geübt.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'6'},{character:'X'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D6X6X6X"}]}
+		]
+	}, {
+		name: 'Lektion 22',
+		introText: '<p>In dieser Lektion werden <em>der Doppelstrich</em>, <em>der Stern</em> und <em>das Plus</em> geübt. Das Plus ist gleichzeitig das Zeichen für das Ende einer Nachricht.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'='},{character:'*'},{character:'+'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D6X=*+=*+=*+"}]}
+		]
+	}, {
+		name: 'Lektion 23',
+		introText: '<p>In dieser Lektion werden die Zeichen <em>Ä</em>, <em>Ü</em> und <em>Ü</em> geübt. Du musst sie zum Funken nicht unbedingt können, deshalb werden sie in diesem Kurs später nicht mehr vorkommen, sondern nur im Fortgeschrittenen-Bereich.</p>',
+		exercises: [
+			{newCharacters:[{characters:[{character:'Ä'},{character:'Ö'},{character:'Ü'}]}]},
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D6X=*+ÄÖÜÄÖÜÄÖÜ"}]}
+		]
+	}, {
+		name: 'Lektion 24',
+		introText: '<p>Jetzt gibt es keine neuen Zeichen mehr. Dafür üben wir Klartext-Wörter ohne Umlaute und probieren höhere Geschwindigkeiten aus.</p>',
+		exercises: [
+			{randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D6X=*+"}]}
+		]
+	}]
+},{
+	name: 'Fortgeschrittene',
+	introText: '<p>Übungen für Fortgeschrittene</p>',
+	pages: [{
+		name: 'Der Fortschritt.',
+		exercises: [
+			{newCharacters:[{characters:[{character:'K'},{character:'R'},{character:'M'},{character:'S'}]}]},
+			{randomGroups:[{characters:"KRMS"}]},
+			{randomGroups:[{characters:"WTF"}]}
+		]
+	}]
+},{
+	name: 'Info',
+	introText: '<p>Über das Projekt und so.</p>',
+	pages: [{
+		name: 'Über uns',
+		exercises: [
+			{plainHtml:'<p>Über dieses Projekt ein bisschen blabla...</p>'}
+		]
+	}]
+}
+]};
