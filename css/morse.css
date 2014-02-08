@@ -11,3 +11,7 @@ body {
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
+
+.container pre {
+	letter-spacing: 0.2em;
+}

@@ -10,49 +10,55 @@ Just delete the directories *de*, *en* and start
 The lessons should contain a lot of background information and some links to good information pages.
 
 
-exercise types
+Exercise types
 --------------
 
-Listen to new characters
 
-Random characters for writing down (length 2-5 characters?)
-Change frequency after each row.
-New characters more often.
+Let the user listen to new characters.
 
-Text message for writing down (QSO, Text with many numbers)
-Explanation what the QSO text means.
+    {newCharacters:[{characters:[{character:'C'},{character:'Q'}]}]}
 
-High speed exercise
-(for advanced level different speeds)
+Play words of 3-5 random characters and write them to a box. The user will be asked to write it down to paper. To put more intense on new characters, write them multiple times into the list of characters. TODO: Change frequency after each row.
 
-Jokes or other sentences that will not be visible.
-Selection of 2-5 messages per exercise
-Also possible: Whole stories in CW
+    {randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D1D1D"}]}
 
-Real QSOs. Each OM with his own frequency
+Add some text to the lesson. This could be an explanation or a link to more information, a video with a morse QSO or anything else.
 
-Word lists: Call signs, clear text words
+    {plainHtml:'<h2>Stuff</h2><p>Simply some HTML</p>'}
 
-Spoken characters or words for reading in the mind (Speech synthesis is difficult)
+Output some text messages, e.g. QSOs, rhymes or text with many numbers. You should offer 2-5 messages. It would be nice to explain the QSOs in a *plainHtml* element below. TODO: The OMs in the QSOs could have different frequencies.
 
-Display the full text without cursor, the user should read while listening
+    {visibleMessages:[{messages:[
+      {description:'message 1', message:'CQ CQ CQ DE DD1TS'},
+      {description:'message 2', message:'HAM RADIO 4EVER'},
+    ]}]}
 
-PileUp
+The same without printing on the screen to keep the message interesting, e.g. for jokes. You could divide a longer story in 2-5 chapters and put it into an *invisibleMessages* exercise, too.
 
-Real QSOs (link should be enough)
-
+    {invisibleMessages:[{messages:[
+      {description:'message 1', message:'CQ CQ CQ DE DD1TS'},
+      {description:'message 2', message:'HAM RADIO 4EVER'},
+    ]}]}
 
 
-Sources
--------
+All exercises accept a speed parameter for a speed in WPS.
 
-http://www.wortschatz.uni-leipzig.de/html/wliste.html
-/usr/share/dict
+    {randomGroups:[{characters:"KRMS",speed:25}]}
 
-Jokes in CW
+### TODO ###
 
-LCWO plain text messages
+* Word lists: Call signs, clear text words
+* Let the browser read the words after morse playback. You can learn with eyes shut.
+* PileUp simulation
 
+
+
+Sources for plain text messages
+-------------------------------
+
+* Word lists from http://www.wortschatz.uni-leipzig.de/html/wliste.html or /usr/share/dict
+* Jokes in CW
+* LCWO plain text messages
 
 
 Cache
