@@ -110,6 +110,8 @@ $(function() {
 				.html().replace(/ /g,'').replace(/\n/g,'</span>\n<span>');
 			var correctMessage = message.replace(/ /g,'')
 				.replace(/\n/g,'</span>\n<span>');
+			var enteredMessage = '<span>'+enteredMessage+'</span>';
+			var correctMessage = '<span>'+correctMessage+'</span>';
 
 			$(self).parent().next().find('pre').first().html(enteredMessage);
 			$(self).parent().next().find('pre').last().html(correctMessage);
