@@ -7,7 +7,7 @@ de: {
 	randomGroupsTitle: 'Zufällige Gruppen',
 	randomGroupsInstruction: 'Schreibe die Gruppen auf einen Zettel. Es sollten etwa 90% richtig sein, damit die Aufgabe erfolgreich abgeschlossen ist.',
 	visibleMessagesTitle: 'Nachricht aufnehmen',
-	visibleMessagesInstruction: 'Spiele eine der Nachrichten ab und versuche, sie mitzuschreiben.',
+	visibleMessagesInstruction: 'Spiele eine der Nachrichten ab und versuche mitzuschreiben oder dir alles zu merken.',
 	invisibleMessagesTitle: 'Nachricht aufnehmen',
 	invisibleMessagesInstruction: 'Die folgende Nachrichten sind streng geheim. Sie werden nicht angezeigt.',
 
