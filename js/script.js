@@ -48,7 +48,7 @@ $(function() {
 	$('[data-morse-touch]').click(function() {
 		var self = this;
 		// wipe PRE element
-		$(self).parent().next().find('pre').html('');
+		$(self).parent().next().find('pre').html(' ');
 
 		// Deselect button.
 		$(this).blur();
@@ -78,6 +78,8 @@ $(function() {
 			// pause after each group
 			message += '    \n';
 		}
+		// get rid of last \n
+		message = message.slice(0,-1);
 
 		// Buttons with keys
 		$(self).parent().parent().find('[data-morse-touch-key]').click(function(){
