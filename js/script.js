@@ -107,16 +107,29 @@ $(function() {
 				.off('click')
 				.attr('disabled','disabled');
 
-			// show correct message
-			var enteredMessage = $(self).parent().next().find('pre').first()
-				.html().replace(/ /g,'').replace(/\n/g,'</span>\n<span>');
+			// show correct message and reformat entered message
+			var enteredMessageElement = $(self).parent().next().find('pre').first();
+			var correctMessageElement = $(self).parent().next().find('pre').last();
+
+			var enteredMessage = enteredMessageElement.html()
+				.replace(/ /g,'').replace(/\n/g,'</span>\n<span>');
 			var correctMessage = message.replace(/ /g,'')
 				.replace(/\n/g,'</span>\n<span>');
 			var enteredMessage = '<span>'+enteredMessage+'</span>';
 			var correctMessage = '<span>'+correctMessage+'</span>';
 
-			$(self).parent().next().find('pre').first().html(enteredMessage);
-			$(self).parent().next().find('pre').last().html(correctMessage);
+			enteredMessageElement.html(enteredMessage);
+			correctMessageElement.html(correctMessage);
+
+			// compare entered and correct
+			enteredMessageElement.children().each(function(i,elem){
+				var enteredLine = enteredMessageElement.find(':nth-child('+(i+1)+')').html();
+				var correctLine = correctMessageElement.find(':nth-child('+(i+1)+')').html();
+				if (enteredLine == correctLine)
+					enteredMessageElement.find(':nth-child('+(i+1)+')').addClass('bg-success');
+				else
+					enteredMessageElement.find(':nth-child('+(i+1)+')').addClass('bg-danger');
+			});
 
 			// remove this function
 			morse.messageCallbacks.pop();
