@@ -67,13 +67,13 @@ $(function() {
 		});
 
 		var characters = $(this).attr('data-morse-touch');
-		var message = '> >\n';
+		var message = '> \n';
 		for (var i=0;i<7;i++) { // seven lines
 			for (j=0;j<5;j++) { // five letters per line
 				charNo = Math.floor(Math.random() * characters.length);
 				message += characters[charNo];
 			}
-			message += '     \n';
+			message += ' \n';
 		}
 
 		// Buttons with keys
