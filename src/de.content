@@ -22,6 +22,7 @@ content : [{
 		exercises: [
 			{newCharacters:[{characters:[{character:'U'},{character:'A'},{character:'P'}]}]},
 			{randomGroups:[{characters:"KRMSUUAAPP"}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"}]}]},
 			{visibleMessages:[{messages:[
 				{description:'Nachricht 1', message:'AU RAU'},
 				{description:'Nachricht 2', message:'SAU PASS'},
@@ -34,6 +35,7 @@ content : [{
 		exercises: [
 			{newCharacters:[{characters:[{character:'T'},{character:'L'},{character:'O'}]}]},
 			{randomGroups:[{characters:"KRMSUAPTLOTLO"}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"},{key:"T"},{key:"L"},{key:"O"}]}]},
 			{invisibleMessages:[{messages:[
 				{description:'Nachricht 1', message:'LOL TOLL'},
 				{description:'Nachricht 2', message:'KOMM TAPAS'},

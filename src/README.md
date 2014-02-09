@@ -22,6 +22,10 @@ Play words of 3-5 random characters and write them to a box. The user will be as
 
     {randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D1D1D"}]}
 
+Play groups of 5 random characters. The user has input buttons or can use the keyboard. This is good for 3-5 new characters.
+
+    {touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"M"},{key:"S"}]}]},
+
 Add some text to the lesson. This could be an explanation or a link to more information, a video with a morse QSO or anything else.
 
     {plainHtml:'<h2>Stuff</h2><p>Simply some HTML</p>'}

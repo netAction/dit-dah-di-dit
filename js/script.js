@@ -54,7 +54,11 @@ $(function() {
 		// after each word add a new line to PRE element
 		morse.characterCallbacks.push(function(character){
 			if (doNewLine) {
-				$(self).parent().next().find('pre').first().append("\n");
+				// add new line and scroll down a bit
+				var pre = $(self).parent().next().find('pre').first();
+				var oldHeight = pre.height();
+				pre.append("\n");
+				$(window).scrollTop($(window).scrollTop()+pre.height()-oldHeight);
 				doNewLine = false;
 			}
 			if (character == "\n") doNewLine = true;
@@ -91,7 +95,9 @@ $(function() {
 		morse.messageCallbacks.push(function(){
 			// deactivate events for keypress or buttons
 			$(document).off('keypress');
-			$(self).parent().parent().find('[data-morse-touch-key]').off('click');
+			$(self).parent().parent().find('[data-morse-touch-key]')
+				.off('click')
+				.attr('disabled','disabled');
 
 			// show correct message
 			$(self).parent().next().find('pre').last().html(message);
