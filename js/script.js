@@ -74,7 +74,7 @@ $(function() {
 				charNo = Math.floor(Math.random() * characters.length);
 				message += characters[charNo];
 			}
-			message += ' \n';
+			message += '    \n';
 		}
 
 		// Buttons with keys
