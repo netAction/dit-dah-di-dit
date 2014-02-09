@@ -34,7 +34,7 @@ $(function() {
 		var message = '> >\n';
 		for (var i=0;i<7;i++) { // seven lines
 			var wordLength = Math.floor(Math.random()*3)+3;
-			for (j=0;j<wordLength;j++) { // five letters per line
+			for (j=0;j<wordLength;j++) { // 3-5 letters per line
 				charNo = Math.floor(Math.random() * characters.length);
 				message += characters[charNo];
 			}
@@ -42,6 +42,68 @@ $(function() {
 		}
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
+
+
+	$('[data-morse-touch]').click(function() {
+		var self = this;
+		// wipe PRE element
+		$(self).parent().next().find('pre').html('');
+
+		var doNewLine = false;
+
+		// after each word add a new line to PRE element
+		morse.characterCallbacks.push(function(character){
+			if (doNewLine) {
+				$(self).parent().next().find('pre').first().append("\n");
+				doNewLine = false;
+			}
+			if (character == "\n") doNewLine = true;
+		});
+
+		var characters = $(this).attr('data-morse-touch');
+		var message = '> >\n';
+		for (var i=0;i<7;i++) { // seven lines
+			for (j=0;j<5;j++) { // five letters per line
+				charNo = Math.floor(Math.random() * characters.length);
+				message += characters[charNo];
+			}
+			message += '\n';
+		}
+
+		// Buttons with keys
+		$(self).parent().parent().find('[data-morse-touch-key]').click(function(){
+			// Add character to PRE element
+			$(this).parent().prev().find('pre').first().append(
+				$(this).attr('data-morse-touch-key')
+			);
+		}).removeAttr('disabled');
+
+		// Keyboard input
+		$(document).keypress(function(e) {
+			var char = (typeof e.which == "number") ? e.which : e.keyCode;
+			char = String.fromCharCode(char).toUpperCase();
+			var possibleCharacters = $(self).attr('data-morse-touch');
+			if(possibleCharacters.indexOf(char) > -1) {
+				$(self).parent().next().find('pre').first().append(char);
+			}
+		});
+
+		morse.messageCallbacks.push(function(){
+			// deactivate events for keypress or buttons
+			$(document).off('keypress');
+			$(self).parent().parent().find('[data-morse-touch-key]').off('click');
+
+			// show correct message
+			$(self).parent().next().find('pre').last().html(message);
+
+			// remove this function
+			morse.messageCallbacks.pop();
+		});
+
+		morsePlay(message,$(this).attr('data-morse-speed'));
+	}).removeAttr('disabled');
+	$('[data-morse-touch-key]').attr('disabled','disabled');
+
 
 	$('[data-morse-stop]').click(function() {
 		morse.stop();

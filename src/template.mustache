@@ -59,7 +59,7 @@
 					<p>{{#i18n}}newCharactersInstruction{{/i18n}}</p>
 					<p>
 						{{#characters}}
-							<button type="button" data-morse-play="{{character}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{character}}</button>
+							<button type="button" data-morse-play="{{character}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">&nbsp;{{character}}&nbsp;</button>
 						{{/characters}}
 					</p>
 				{{/newCharacters}}
@@ -73,6 +73,22 @@
 					</p>
 					<pre></pre>
 				{{/randomGroups}}
+
+				{{#touchGroups}}
+					<h2>{{#i18n}}touchGroupsTitle{{/i18n}}</h2>
+					<p>{{#i18n}}touchGroupsInstruction{{/i18n}}</p>
+					<p>
+						<button type="button" data-morse-touch="{{#keys}}{{key}}{{/keys}}" data-morse-playbutton="true" data-morse-speed="{{speed}}" class="btn btn-primary">{{#i18n}}playButton{{/i18n}}</button>
+						<button type="button" data-morse-stop="stop" class="btn btn-primary" disabled="disabled">{{#i18n}}stopButton{{/i18n}}</button>
+					</p>
+					<div class="row">
+						<div class="col-xs-6"><pre></pre></div>
+						<div class="col-xs-6"><pre></pre></div>
+					</div>
+					<p>{{#keys}}
+					<button type="button" data-morse-touch-key="{{key}}" class="btn btn-primary" disabled="disabled">&nbsp;{{key}}&nbsp;</button>
+					{{/keys}}</p>
+				{{/touchGroups}}
 
 				{{#visibleMessages}}
 					<h2>{{#i18n}}visibleMessagesTitle{{/i18n}}</h2>

@@ -12,6 +12,7 @@ content : [{
 		introText: '<p>In der ersten Lektion werden die Zeichen <em>K</em>, <em>R</em>, <em>M</em> und <em>S</em> geübt.</p>',
 		exercises: [
 			{newCharacters:[{characters:[{character:'K'},{character:'R'},{character:'M'},{character:'S'}]}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"M"},{key:"S"}]}]},
 			{plainHtml:'<h2>Anleitung</h2><p>Die folgenden Wörter aus Zufallszeichen solltest du mit Kugelschreiber auf einen Zettel schreiben und anschließend vergleichen. Wenn du ein Zeichen nicht sofort erkennst, malst du schnell einen Punkt. Verpasse nicht das nächste Zeichen, weil du überlegst.</p>'},
 			{randomGroups:[{characters:"KRMS"}]}
 		]
@@ -44,7 +45,7 @@ content : [{
 		exercises: [
 			{newCharacters:[{characters:[{character:'W'},{character:'I'},{character:'.'}]}]},
 			{randomGroups:[{characters:"KRMSUAPTLOWI.WI."}]},
-			{plainHtml:'<h2>Schneller!</h2><p>Die Zeichen kommen in diesem Kurs immer in 25 Wörtern pro Minute. Ein Wort ist in dieser Rechnung so lang wie 50 Dits. Ein Dit dauert damit 48ms. Durch eine Extra-Pause von fünf Dits nach jedem Zeichen ist die effektive Geschwindigkeit 15WPM. Diese Verzögerung nennt sich <a href="http://www.justlearnmorsecode.com/farnsworth.html">Farnsworth timing</a>. In dieser Übung verkürzen wir die Verzögerung etwas, so dass du 20WPM hörst. Viel Spaß!</p>'},
+			{plainHtml:'<h2>Schneller!</h2><p>Die einzelnen Zeichen kommen in diesem Kurs immer mit 25 Wörtern pro Minute. Ein Wort ist in dieser Rechnung so lang wie 50 Dits. Ein Dit dauert damit 48ms. Bisher hatten wir eine Extra-Pause von fünf Dits nach jedem Zeichen und kamen damit auf eine effektive Geschwindigkeit von 15WPM. Solch eine Verzögerung nennt sich <a href="http://www.justlearnmorsecode.com/farnsworth.html">Farnsworth timing</a>. Man hört die Zeichen ähnlich wie später im Funkgerät, trotzdem kann man noch mitschreiben. In dieser Übung verkürzen wir die Verzögerung etwas, so dass du 20WPM hörst. Viel Spaß!</p>'},
 			{randomGroups:[{characters:"KRMSUAPTLOWI.WI.",speed:20}]},
 		]
 	}, {
