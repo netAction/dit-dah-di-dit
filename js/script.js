@@ -20,7 +20,8 @@ function morsePlay(message,speed) {
 
 $(function() {
 	$('[data-morse-play]').click(function() {
-		morsePlay(" "+$(this).attr('data-morse-play'),$(this).attr('data-morse-speed'));
+		character = " "+$(this).attr('data-morse-play');
+		morsePlay(character+character+character,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
 
 	$('[data-morse-random]').click(function() {
