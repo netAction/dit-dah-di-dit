@@ -49,15 +49,17 @@ $(function() {
 		// wipe PRE element
 		$(self).parent().next().find('pre').html('');
 
-		var doNewLine = false;
+		// Deselect button.
+		$(this).blur();
 
+		var doNewLine = false;
 		// after each word add a new line to PRE element
 		morse.characterCallbacks.push(function(character){
 			if (doNewLine) {
 				// add new line and scroll down a bit
 				var pre = $(self).parent().next().find('pre').first();
 				var oldHeight = pre.height();
-				pre.append("\n");
+				pre.append("\n ");
 				$(window).scrollTop($(window).scrollTop()+pre.height()-oldHeight);
 				doNewLine = false;
 			}
@@ -71,7 +73,7 @@ $(function() {
 				charNo = Math.floor(Math.random() * characters.length);
 				message += characters[charNo];
 			}
-			message += '\n';
+			message += '     \n';
 		}
 
 		// Buttons with keys
@@ -92,6 +94,7 @@ $(function() {
 			}
 		});
 
+		// Do this after playback stopped
 		morse.messageCallbacks.push(function(){
 			// deactivate events for keypress or buttons
 			$(document).off('keypress');
@@ -100,7 +103,7 @@ $(function() {
 				.attr('disabled','disabled');
 
 			// show correct message
-			$(self).parent().next().find('pre').last().html(message);
+			$(self).parent().next().find('pre').last().html(message.replace(/ /g,''));
 
 			// remove this function
 			morse.messageCallbacks.pop();
