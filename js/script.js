@@ -68,12 +68,14 @@ $(function() {
 		});
 
 		var characters = $(this).attr('data-morse-touch');
-		var message = '> \n';
+		// pause at beginning
+		var message = '        ';
 		for (var i=0;i<7;i++) { // seven lines
 			for (j=0;j<5;j++) { // five letters per line
 				charNo = Math.floor(Math.random() * characters.length);
 				message += characters[charNo];
 			}
+			// pause after each group
 			message += '    \n';
 		}
 
@@ -104,7 +106,13 @@ $(function() {
 				.attr('disabled','disabled');
 
 			// show correct message
-			$(self).parent().next().find('pre').last().html(message.replace(/ /g,''));
+			var enteredMessage = $(self).parent().next().find('pre').first()
+				.html().replace(/ /g,'').replace(/\n/g,'</span>\n<span>');
+			var correctMessage = message.replace(/ /g,'')
+				.replace(/\n/g,'</span>\n<span>');
+
+			$(self).parent().next().find('pre').first().html(enteredMessage);
+			$(self).parent().next().find('pre').last().html(correctMessage);
 
 			// remove this function
 			morse.messageCallbacks.pop();
