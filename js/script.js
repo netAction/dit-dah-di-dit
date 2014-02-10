@@ -90,7 +90,7 @@ $(function() {
 		}).removeAttr('disabled');
 
 		// Keyboard input
-		$(document).keypress(function(e) {
+//		$(document).keypress(function(e) {
 		$(document).bind('input keyup',function(e) {
 alert("X");
 
