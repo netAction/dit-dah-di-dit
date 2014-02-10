@@ -90,22 +90,19 @@ $(function() {
 		}).removeAttr('disabled');
 
 		// Keyboard input
-		$(self).parent().parent().find('input').change(function() {
-			var char = $(this).val();
-			char = char.toUpperCase();
+		$(document).keypress(function(e) {
+			var char = (typeof e.which == "number") ? e.which : e.keyCode;
+			char = String.fromCharCode(char).toUpperCase();
 			var possibleCharacters = $(self).attr('data-morse-touch');
 			if(possibleCharacters.indexOf(char) > -1) {
 				$(self).parent().next().find('pre').first().append(char);
 			}
-		}).blur(function(){
-			$(this).focus();
-		}).css('background-color','green');
+		});
 
 		// Do this after playback stopped
 		morse.messageCallbacks.push(function(){
 			// deactivate events for keypress or buttons
 			$(document).off('keypress');
-			// TODO: INPUT BLUR
 			$(self).parent().parent().find('[data-morse-touch-key]')
 				.off('click')
 				.attr('disabled','disabled');
@@ -141,6 +138,9 @@ $(function() {
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
+	$('[data-morse-touch-keyboard]').click(function() {
+		$(this).next().focus();
+	});
 
 
 
@@ -184,3 +184,4 @@ $(function() {
 	});
 
 });
+
