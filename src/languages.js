@@ -2,7 +2,6 @@ module.exports = {
 de: {
 	playButton: 'Abspielen',
 	stopButton: 'Stop',
-	showKeyboard: 'Tastatur anzeigen',
 	newCharactersTitle: 'Neue Zeichen',
 	newCharactersInstruction: 'Höre dir erst einmal die Zeichen dieser Lektion an und präge sie dir ein.',
 	randomGroupsTitle: 'Zufällige Gruppen',
@@ -18,7 +17,6 @@ de: {
 en: {
 	playButton: 'play',
 	stopButton: 'stop',
-	showKeyboard: 'show keyboard',
 	newCharactersTitle: 'New characters',
 	newCharactersInstruction: 'At first, listen to the characters and try to remeber them.',
 	randomGroupsTitle: 'Random groups',

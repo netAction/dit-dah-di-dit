@@ -139,7 +139,7 @@ $(function() {
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
 	$('[data-morse-touch-keyboard]').click(function() {
-		$(this).next().focus();
+		$(this).parent().find('input').focus();
 	});
 
 
