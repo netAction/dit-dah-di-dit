@@ -99,7 +99,7 @@ $(function() {
 			}
 		}).blur(function(){
 			$(this).focus();
-		});
+		}).css('background-color':'green');
 
 		// Do this after playback stopped
 		morse.messageCallbacks.push(function(){
