@@ -138,6 +138,10 @@ $(function() {
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
+	$('[data-morse-touch-keyboard]').click(function() {
+		$(this).next().focus();
+	});
+
 
 
 	$('[data-morse-stop]').click(function() {

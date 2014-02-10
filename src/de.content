@@ -12,9 +12,9 @@ content : [{
 		introText: '<p>In der ersten Lektion werden die Zeichen <em>K</em>, <em>R</em>, <em>M</em> und <em>S</em> geübt.</p>',
 		exercises: [
 			{newCharacters:[{characters:[{character:'K'},{character:'R'},{character:'M'},{character:'S'}]}]},
-			{touchGroups:[{keys:[{key:"K"},{key:"R"}]}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"}],showKeys:true}]},
 			{plainHtml:'<p>War leicht? Jetzt kommen alle vier Zeichen durcheinander. Beim ersten Durchgang wirst du nicht viel aufschreiben können. Probiere es einfach öfter.</p>'},
-			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"M"},{key:"S"}]}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"M"},{key:"S"}],showKeys:true}]},
 			{plainHtml:'<h2>Anleitung</h2><p>Die folgenden Wörter aus Zufallszeichen solltest du mit Kugelschreiber auf einen Zettel schreiben und anschließend vergleichen. Wenn du ein Zeichen nicht sofort erkennst, malst du schnell einen Punkt. Verpasse nicht das nächste Zeichen, weil du überlegst.</p>'},
 			{randomGroups:[{characters:"KRMS"}]}
 		]
@@ -24,7 +24,7 @@ content : [{
 		exercises: [
 			{newCharacters:[{characters:[{character:'U'},{character:'A'},{character:'P'}]}]},
 			{randomGroups:[{characters:"KRMSUUAAPP"}]},
-			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"}]}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"}],showKeyboard:true,showKeys:true}]},
 			{visibleMessages:[{messages:[
 				{description:'Nachricht 1', message:'AU RAU'},
 				{description:'Nachricht 2', message:'SAU PASS'},
@@ -37,7 +37,7 @@ content : [{
 		exercises: [
 			{newCharacters:[{characters:[{character:'T'},{character:'L'},{character:'O'}]}]},
 			{randomGroups:[{characters:"KRMSUAPTLOTLO"}]},
-			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"},{key:"T"},{key:"L"},{key:"O"}]}]},
+			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"},{key:"T"},{key:"L"},{key:"O"}],showKeyboard:true}]},
 			{invisibleMessages:[{messages:[
 				{description:'Nachricht 1', message:'LOL TOLL'},
 				{description:'Nachricht 2', message:'KOMM TAPAS'},

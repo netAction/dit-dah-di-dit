@@ -22,9 +22,10 @@ Play words of 3-5 random characters and write them to a box. The user will be as
 
     {randomGroups:[{characters:"KRMSUAPTLOWI.NJEFY0,VG5/Q9ZH38B?427C1D1D1D"}]}
 
-Play groups of 5 random characters. The user has input buttons or can use the keyboard. This is good for 3-5 new characters.
+Play groups of 5 random characters. The user has input buttons or can use the keyboard. This is good for 3-5 new characters. You can adjust if you want to display buttons with the keys, a button for keyboard display on touch devices or both.
 
-    {touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"M"},{key:"S"}]}]},
+    {touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"M"},{key:"S"}],showKeys:true}]},
+    {touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"}],showKeyboard:true,showKeys:true}]},
 
 Add some text to the lesson. This could be an explanation or a link to more information, a video with a morse QSO or anything else.
 
@@ -49,9 +50,10 @@ All exercises accept a speed parameter for a speed in WPS.
 
     {randomGroups:[{characters:"KRMS",speed:25}]}
 
+
 ### TODO ###
 
-* Word lists: Call signs, clear text words
+* Word lists: Call signs, clear text words, ham radio abbreviations, cities
 * Let the browser read the words after morse playback. You can learn with eyes shut.
 * PileUp simulation
 
