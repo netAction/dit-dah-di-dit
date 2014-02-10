@@ -91,6 +91,9 @@ $(function() {
 
 		// Keyboard input
 		$(document).keypress(function(e) {
+		$(document).bind('input keyup',function(e) {
+alert("X");
+
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			char = String.fromCharCode(char).toUpperCase();
 			var possibleCharacters = $(self).attr('data-morse-touch');
