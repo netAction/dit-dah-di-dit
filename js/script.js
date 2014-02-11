@@ -47,8 +47,8 @@ $(function() {
 
 	$('[data-morse-touch]').click(function() {
 		var self = this;
-		// wipe PRE element
-		$(self).parent().parent().find('pre').html(' ');
+		// wipe PRE elements
+		$(self).parent().next().find('pre').html(' ');
 
 		// Deselect button.
 		$(this).blur();
@@ -58,7 +58,7 @@ $(function() {
 		morse.characterCallbacks.push(function(character){
 			if (doNewLine) {
 				// add new line and scroll down a bit
-				var pre = $(self).parent().parent().find('pre').first();
+				var pre = $(self).parent().next().find('pre').first();
 				var oldHeight = pre.height();
 				pre.append("\n ");
 				$(window).scrollTop($(window).scrollTop()+pre.height()-oldHeight);
@@ -84,7 +84,7 @@ $(function() {
 		// Buttons with keys
 		$(self).parent().parent().find('[data-morse-touch-key]').click(function(){
 			// Add character to PRE element
-			$(this).parent().parent().find('pre').first().append(
+			$(this).parent().prev().prev().find('pre').first().append(
 				$(this).attr('data-morse-touch-key')
 			);
 		}).removeAttr('disabled');
@@ -103,7 +103,7 @@ $(function() {
 			char = char.toUpperCase();
 			var possibleCharacters = $(self).attr('data-morse-touch');
 			if(possibleCharacters.indexOf(char) > -1) {
-				$(self).parent().parent().find('pre').first().append(char);
+				$(self).parent().next().find('pre').first().append(char);
 			}
 
 			// fill with something strange
@@ -120,8 +120,8 @@ $(function() {
 				.attr('disabled','disabled');
 
 			// show correct message and reformat entered message
-			var enteredMessageElement = $(self).parent().parent().find('pre').first();
-			var correctMessageElement = $(self).parent().parent().find('pre').last();
+			var enteredMessageElement = $(self).parent().next().find('pre').first();
+			var correctMessageElement = $(self).parent().next().find('pre').last();
 
 			var enteredMessage = enteredMessageElement.html()
 				.replace(/ /g,'').replace(/\n/g,'</span>\n<span>');
@@ -150,8 +150,8 @@ $(function() {
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
-	$('[data-morse-touch-keyboard]').click(function() {
-		$(this).parent().parent().find('input').val("").focus();
+	$('[data-morse-touch]').parent().next().find('pre').first().click(function() {
+		$(this).parent().parent().next().val("").focus();
 	});
 
 
