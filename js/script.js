@@ -96,11 +96,9 @@ function touchGroups() {
 
 		// Keyboard input
 		$(document).bind('input keyup',function(e) {
-console.log("INPUT");
 			var inputElement = $(':focus');
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			// convert key code (ASCII) to character
-console.log(char,inputElement.val());
 			// only when user does not use INPUT element
 			if (char && (!inputElement.is(":focus"))) char = String.fromCharCode(char);
 			// if not possible, try INPUT element
@@ -109,7 +107,6 @@ console.log(char,inputElement.val());
 				char = inputElement.val().slice(-1);
 				// try again if cursor on wrong position
 				if (char == "☺") char = inputElement.val().slice(-1);
-console.log("A",char);
 			}
 
 			char = char.toUpperCase();
@@ -119,7 +116,7 @@ console.log("A",char);
 			}
 
 			// fill with something strange
-	//		inputElement.val('☺');
+			inputElement.val('☺');
 		});
 
 		// Do this after playback stopped

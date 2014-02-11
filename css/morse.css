@@ -20,11 +20,11 @@ body {
 }
 
 input.hardlyvisible {
-	width:30px;
-	height:30px;
+	width:3px;
+	height:3px;
 	border-width:0;
 	margin:-3px 0;
 	padding:0;
-	background-color:yellow;
+	background-color:#fff;
 	color:red;
 }
