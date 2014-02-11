@@ -147,17 +147,53 @@ function convertFilename(name) {
 // ######## Cache manifest
 
 function generateManifest() {
+var walk = function(dir, done) {
+	var results = [];
+	fs.readdir(dir, function(err, list) {
+		if (err) return done(err);
+		var i = 0;
+		(function next() {
+			var file = list[i++];
+			if (!file) return done(null, results);
+			file = dir + '/' + file;
+			fs.stat(file, function(err, stat) {
+				if (stat && stat.isDirectory()) {
+					walk(file, function(err, res) {
+						results = results.concat(res);
+						next();
+					});
+				} else {
+					results.push(file);
+					next();
+				}
+			});
+		})();
+	});
+};
+
+walk(__dirname+'/..', function(err, results) {
+	if (err) throw err;
+
 	var date = new Date();
 	date = date.toString();
 	var manifest =
 		"CACHE MANIFEST\n"+
 		"# "+date+"\n"+
-		"\n"+
-		"NETWORK:\n"+
-		"*\n"+
 		"\n";
 
+	for (fileName in results) {
+		fileName = results[fileName].split('/../');
+		fileName = fileName[1];
+		if (fileName.indexOf('src')==0) continue;
+		if (fileName.indexOf('.git')==0) continue;
+		if (fileName.indexOf('cache.manifest')==0) continue;
+		manifest += fileName+"\n";
+	}
+
+	manifest += "\n";
 	fs.writeFileSync(__dirname+'/../cache.manifest',manifest);
+});
+
 }
 
 generateManifest();
