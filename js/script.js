@@ -96,14 +96,19 @@ function touchGroups() {
 
 		// Keyboard input
 		$(document).bind('input keyup',function(e) {
+console.log("INPUT");
 			var inputElement = $(self).parent().parent().find('input');
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			// convert key code (ASCII) to character
+console.log(char);
 			// only when user does not use INPUT element
 			if (char && (!inputElement.is(":focus"))) char = String.fromCharCode(char);
 			// if not possible, try INPUT element
 			// as soft keyboards on phones do not send correct character
-			else if (inputElement.is(":focus")) char = inputElement.val().slice(-1);
+			else if (inputElement.is(":focus")) {
+				char = inputElement.val().slice(-1);
+console.log("A",char);
+			}
 
 			char = char.toUpperCase();
 			var possibleCharacters = $(self).attr('data-morse-touch');
