@@ -163,12 +163,10 @@ console.log("A",char);
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
 	$('[data-morse-touch]').each(function(i,element) {
-		$(this).parent().next().find('pre').first().on('click vclick tap',function() {
-console.log("Focus!");
-		$(this).parent().parent().next().val("").focus();
+		$(this).parent().next().find('pre').first().click(function() {
+			$(this).parent().parent().next().val("").focus();
+		});
 	});
-	});
-$('pre').click(function(){console.log("Yeah!");});
 } // touchGroups
 
 
