@@ -231,6 +231,10 @@ function logEvent(e) {
     console.log(message);
 }
 
+	$(window).bind('noupdate',function() {
+		$('#offlinesuccess').show();
+		$('#offlinewaiting').hide();
+	});
 
 
 	window.addEventListener('load', function(e) {
