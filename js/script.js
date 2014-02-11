@@ -100,7 +100,7 @@ function touchGroups() {
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			// convert key code (ASCII) to character
 			// only when user does not use INPUT element
-			if (char && (!inputElement.length) char = String.fromCharCode(char);
+			if (char && (!inputElement.length)) char = String.fromCharCode(char);
 			// if not possible, try INPUT element
 			// as soft keyboards on phones do not send correct character
 			else if (inputElement.length) {
