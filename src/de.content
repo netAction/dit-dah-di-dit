@@ -24,6 +24,7 @@ content : [{
 		exercises: [
 			{newCharacters:[{characters:[{character:'U'},{character:'A'},{character:'P'}]}]},
 			{randomGroups:[{characters:"KRMSUUAAPP"}]},
+			{plainHtml:'<h2>Anmerkung</h2><p>Bei den Gruppen mit Eingabemöglichkeit kannst du statt die abgebildeten Buchstaben zu drücken auch deine Tastatur benutzen. Auf Touch-Geräten ohne Tastatur drückst du ins Eingabefeld, um die Soft-Tastatur deines Systems anzuzeigen.</p>'},
 			{touchGroups:[{keys:[{key:"K"},{key:"R"},{key:"U"},{key:"A"},{key:"P"}],showKeyboard:true,showKeys:true}]},
 			{visibleMessages:[{messages:[
 				{description:'Nachricht 1', message:'AU RAU'},
