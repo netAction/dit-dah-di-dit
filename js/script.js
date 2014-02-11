@@ -231,9 +231,10 @@ function logEvent(e) {
     console.log(message);
 }
 
-	$(window).bind('noupdate',function() {
+	$(window).bind('noupdate cached',function() {
 		$('#offlinesuccess').show();
 		$('#offlinewaiting').hide();
+console.log("X");
 	});
 
 
