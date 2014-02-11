@@ -231,8 +231,3 @@ $(function() {
 	offlineCache();
 });
 
-
-
-// ############## Offline cache
-
-
