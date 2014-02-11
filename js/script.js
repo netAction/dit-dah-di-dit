@@ -232,13 +232,6 @@ function logEvent(e) {
 }
 
 
-	function offlineready(e) {
-		$('#offlinesuccess').show();
-		$('#offlinewaiting').hide();
-		console.log("X");
-	}
-	window.applicationCache.addEventListener('cached',offlineready,false);
-	window.applicationCache.addEventListener('updateready',offlineready,false);
 
 
 	window.addEventListener('load', function(e) {
@@ -254,6 +247,15 @@ function logEvent(e) {
 				// Manifest didn't changed. Nothing new to server.
 			}
 		}, false);
+
+		function offlineready(e) {
+			$('#offlinesuccess').show();
+			$('#offlinewaiting').hide();
+			console.log("X");
+		}
+		window.applicationCache.addEventListener('cached',offlineready,false);
+		window.applicationCache.addEventListener('updateready',offlineready,false);
+		window.applicationCache.addEventListener('noupdate',offlineready,false);
 	}, false);
 }
 
