@@ -107,6 +107,8 @@ console.log(char);
 			// as soft keyboards on phones do not send correct character
 			else if (inputElement.is(":focus")) {
 				char = inputElement.val().slice(-1);
+				// try again if cursor on wrong position
+				if (char == "☺") char = inputElement.val().slice(-1);
 console.log("A",char);
 			}
 
@@ -161,6 +163,7 @@ console.log("A",char);
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
 	$('[data-morse-touch]').parent().next().find('pre').first().click(function() {
+console.log("Focus!");
 		$(this).parent().parent().next().val("").focus();
 	});
 } // touchGroups
