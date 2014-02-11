@@ -96,14 +96,14 @@ function touchGroups() {
 
 		// Keyboard input
 		$(document).bind('input keyup',function(e) {
-			var inputElement = $(':focus');
+			var inputElement = $('input:focus');
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			// convert key code (ASCII) to character
 			// only when user does not use INPUT element
-			if (char && (!inputElement.is(":focus"))) char = String.fromCharCode(char);
+			if (char && (!inputElement.length) char = String.fromCharCode(char);
 			// if not possible, try INPUT element
 			// as soft keyboards on phones do not send correct character
-			else if (inputElement.is(":focus")) {
+			else if (inputElement.length) {
 				char = inputElement.val().slice(-1);
 				// try again if cursor on wrong position
 				if (char == "☺") char = inputElement.val().slice(-1);
@@ -116,7 +116,7 @@ function touchGroups() {
 			}
 
 			// fill with something strange
-			inputElement.val('☺');
+			if (inputElement.length) inputElement.val('☺');
 		});
 
 		// Do this after playback stopped
