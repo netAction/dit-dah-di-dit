@@ -100,7 +100,7 @@ console.log("INPUT");
 			var inputElement = $(self).parent().parent().find('input');
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			// convert key code (ASCII) to character
-console.log(char);
+console.log(char,inputElement.val());
 			// only when user does not use INPUT element
 			if (char && (!inputElement.is(":focus"))) char = String.fromCharCode(char);
 			// if not possible, try INPUT element
@@ -162,7 +162,7 @@ console.log("A",char);
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
-	$('[data-morse-touch]').parent().next().find('pre').first().click(function() {
+	$('[data-morse-touch]').parent().next().find('pre').first().on('click, vclick, tap',function() {
 console.log("Focus!");
 		$(this).parent().parent().next().val("").focus();
 	});
