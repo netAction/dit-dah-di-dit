@@ -97,7 +97,7 @@ function touchGroups() {
 		// Keyboard input
 		$(document).bind('input keyup',function(e) {
 console.log("INPUT");
-			var inputElement = $(self).parent().parent().find('input');
+			var inputElement = $(':focus');
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
 			// convert key code (ASCII) to character
 console.log(char,inputElement.val());
