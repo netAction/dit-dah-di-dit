@@ -153,7 +153,7 @@ function generateManifest() {
 		"CACHE MANIFEST\n"+
 		"# "+date+"\n"+
 		"\n"+
-		"CACHE:\n"+
+		"NETWORK:\n"+
 		"*\n"+
 		"\n";
 
