@@ -18,12 +18,15 @@ function morsePlay(message,speed) {
 	morse.play(message);
 };
 
-$(function() {
+
+function newCharacters() {
 	$('[data-morse-play]').click(function() {
 		character = " "+$(this).attr('data-morse-play');
 		morsePlay(character+character+character,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
+}
 
+function randomGroups() {
 	$('[data-morse-random]').click(function() {
 		var self = this;
 		$(self).parent().next().html('');
@@ -43,8 +46,10 @@ $(function() {
 		}
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
+}
 
 
+function touchGroups() {
 	$('[data-morse-touch]').click(function() {
 		var self = this;
 		// wipe PRE elements
@@ -153,13 +158,10 @@ $(function() {
 	$('[data-morse-touch]').parent().next().find('pre').first().click(function() {
 		$(this).parent().parent().next().val("").focus();
 	});
+} // touchGroups
 
 
-
-	$('[data-morse-stop]').click(function() {
-		morse.stop();
-	}).attr('disabled','disabled');
-
+function visibleMessage() {
 	$('[data-morse-visibleMessage]').click(function() {
 		var self = this;
 		$(self).parent().next().html('');
@@ -175,7 +177,9 @@ $(function() {
 	.removeAttr('disabled')
 	// select first message
 	.prev().children().first().prop('selected', true);
+}
 
+function invisibleMessage() {
 	$('[data-morse-invisibleMessage]').click(function() {
 		// take selected message
 		var message = '> >\n'+$(this).prev().val();
@@ -185,7 +189,36 @@ $(function() {
 	.removeAttr('disabled')
 	// select first message
 	.prev().children().first().prop('selected', true);
+}
 
+
+function offlineCache() {
+	// Check if a new cache is available on page load.
+	window.applicationCache.addEventListener('updateready', function(e) {
+		if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+			// Browser downloaded a new app cache.
+			// Swap it in and reload the page to get the new hotness.
+			window.applicationCache.swapCache();
+			if (confirm('A new version of this site is available. Load it?')) {
+				window.location.reload();
+			}
+		} else {
+			// Manifest didn't changed. Nothing new to server.
+		}
+	}, false);
+}
+
+$(function() {
+	newCharacters();
+	randomGroups();
+	touchGroups();
+	visibleMessage();
+	invisibleMessage();
+
+	// All the stop buttons
+	$('[data-morse-stop]').click(function() {
+		morse.stop();
+	}).attr('disabled','disabled');
 
 	morse.messageCallbacks.push(function(){
 		$('[data-morse-playbutton]').removeAttr('disabled');
@@ -195,5 +228,11 @@ $(function() {
 		morse.characterCallbacks = [];
 	});
 
+	offlineCache();
 });
+
+
+
+// ############## Offline cache
+
 

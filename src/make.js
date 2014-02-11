@@ -142,3 +142,23 @@ function convertFilename(name) {
 		.replace(/[^\w]/gi, '') // remove non alphanumeric and non underscore
 	return name;
 }
+
+
+// ######## Cache manifest
+
+function generateManifest() {
+	var date = new Date();
+	date = date.toString();
+	var manifest =
+		"CACHE MANIFEST\n"+
+		"# "+date+"\n"+
+		"\n"+
+		"CACHE:\n"+
+		"*\n"+
+		"\n";
+
+	fs.writeFileSync(__dirname+'/../cache.manifest',manifest);
+}
+
+generateManifest();
+
