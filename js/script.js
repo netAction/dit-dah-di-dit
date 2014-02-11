@@ -119,7 +119,7 @@ console.log("A",char);
 			}
 
 			// fill with something strange
-			inputElement.val('☺');
+	//		inputElement.val('☺');
 		});
 
 		// Do this after playback stopped
@@ -162,10 +162,11 @@ console.log("A",char);
 		morsePlay(message,$(this).attr('data-morse-speed'));
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
-	$('[data-morse-touch]').parent().next().find('pre').first().on('click, vclick, tap',function() {
+	$('[data-morse-touch]').parent().next().find('pre').first().on('click vclick tap',function() {
 console.log("Focus!");
 		$(this).parent().parent().next().val("").focus();
 	});
+$('pre').click(function(){console.log("Yeah!");});
 } // touchGroups
 
 
