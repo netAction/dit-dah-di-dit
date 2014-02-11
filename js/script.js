@@ -231,11 +231,14 @@ function logEvent(e) {
     console.log(message);
 }
 
-	$(window).bind('noupdate cached',function() {
+
+	function offlineready(e) {
 		$('#offlinesuccess').show();
 		$('#offlinewaiting').hide();
-console.log("X");
-	});
+		console.log("X");
+	}
+	window.applicationCache.addEventListener('cached',offlineready,false);
+	window.applicationCache.addEventListener('updateready',offlineready,false);
 
 
 	window.addEventListener('load', function(e) {
