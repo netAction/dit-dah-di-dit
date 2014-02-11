@@ -48,7 +48,7 @@ $(function() {
 	$('[data-morse-touch]').click(function() {
 		var self = this;
 		// wipe PRE element
-		$(self).parent().next().find('pre').html(' ');
+		$(self).parent().parent().find('pre').html(' ');
 
 		// Deselect button.
 		$(this).blur();
@@ -58,7 +58,7 @@ $(function() {
 		morse.characterCallbacks.push(function(character){
 			if (doNewLine) {
 				// add new line and scroll down a bit
-				var pre = $(self).parent().next().find('pre').first();
+				var pre = $(self).parent().parent().find('pre').first();
 				var oldHeight = pre.height();
 				pre.append("\n ");
 				$(window).scrollTop($(window).scrollTop()+pre.height()-oldHeight);
@@ -84,35 +84,44 @@ $(function() {
 		// Buttons with keys
 		$(self).parent().parent().find('[data-morse-touch-key]').click(function(){
 			// Add character to PRE element
-			$(this).parent().prev().find('pre').first().append(
+			$(this).parent().parent().find('pre').first().append(
 				$(this).attr('data-morse-touch-key')
 			);
 		}).removeAttr('disabled');
 
 		// Keyboard input
-//		$(document).keypress(function(e) {
 		$(document).bind('input keyup',function(e) {
-alert("X");
-
+			var inputElement = $(self).parent().parent().find('input');
 			var char = (typeof e.which == "number") ? e.which : e.keyCode;
-			char = String.fromCharCode(char).toUpperCase();
+			// convert key code (ASCII) to character
+			// only when user does not use INPUT element
+			if (char && (!inputElement.is(":focus"))) char = String.fromCharCode(char);
+			// if not possible, try INPUT element
+			// as soft keyboards on phones do not send correct character
+			else if (inputElement.is(":focus")) char = inputElement.val().slice(-1);
+
+			char = char.toUpperCase();
 			var possibleCharacters = $(self).attr('data-morse-touch');
 			if(possibleCharacters.indexOf(char) > -1) {
-				$(self).parent().next().find('pre').first().append(char);
+				$(self).parent().parent().find('pre').first().append(char);
 			}
+
+			// fill with something strange
+			inputElement.val('☺');
 		});
 
 		// Do this after playback stopped
 		morse.messageCallbacks.push(function(){
 			// deactivate events for keypress or buttons
-			$(document).off('keypress');
+			$(document).off('input');
+			$(document).off('keyup');
 			$(self).parent().parent().find('[data-morse-touch-key]')
 				.off('click')
 				.attr('disabled','disabled');
 
 			// show correct message and reformat entered message
-			var enteredMessageElement = $(self).parent().next().find('pre').first();
-			var correctMessageElement = $(self).parent().next().find('pre').last();
+			var enteredMessageElement = $(self).parent().parent().find('pre').first();
+			var correctMessageElement = $(self).parent().parent().find('pre').last();
 
 			var enteredMessage = enteredMessageElement.html()
 				.replace(/ /g,'').replace(/\n/g,'</span>\n<span>');
@@ -142,7 +151,7 @@ alert("X");
 	}).removeAttr('disabled');
 	$('[data-morse-touch-key]').attr('disabled','disabled');
 	$('[data-morse-touch-keyboard]').click(function() {
-		$(this).parent().parent().find('input').focus();
+		$(this).parent().parent().find('input').val("").focus();
 	});
 
 
