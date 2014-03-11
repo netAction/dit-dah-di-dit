@@ -12,8 +12,10 @@ content : [{
 	name: 'Kurs',
 	pages: [{
 		name: 'Lektion 1',
+		//     =========
 		introText: '<p>In der ersten Lektion werden die Zeichen <em>K</em>, <em>R</em>, <em>M</em> und <em>S</em> geübt.</p>',
 		exercises: [
+			{plainHtml:'<p>Herzlich willkommen im Morse-Kurs dit-dah-di-dit!</p><p>Zu Beginn jeder Lektion werden dir die neuen Zeichen vorgestellt. </p>'},
 			{newCharacters:[{characters:[{character:'K'},{character:'R'},{character:'M'},{character:'S'}]}]},
 			{touchGroups:[{keys:[{key:"K"},{key:"R"}],showKeys:true}]},
 			{plainHtml:'<p>War leicht? Jetzt kommen alle vier Zeichen durcheinander. Beim ersten Durchgang wirst du nicht viel aufschreiben können. Probiere es einfach öfter.</p>'},
